@@ -14,9 +14,14 @@ $(".btn").on("click",function (){
     var userChosenColour = $(this).attr("id");
     userClickedPattern.push(userChosenColour);
     playSound(userChosenColour);
+    animatePress(userChosenColour);
 });
 
 function playSound(name){
     var audio = new Audio("sounds/"+name+".mp3");
     audio.play();
+}
+
+function animatePress(currentColour){
+    $("#"+currentColour).addClass("pressed");
 }
