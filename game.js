@@ -19,6 +19,7 @@ $(".btn").on("click",function (){
     userClickedPattern.push(userChosenColour);
     playSound(userChosenColour);
     animatePress(userChosenColour);
+    checkAnswer(userClickedPattern.length-1);
 });
 
 function playSound(name){
@@ -36,3 +37,11 @@ function animatePress(currentColour){
 $(document).keydown(function(){
     nextSequence();
 });
+
+function checkAnswer(currentLevel){
+    if(gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
+        console.log("success");
+    }else{
+        console.log("wrong");
+    }
+}
